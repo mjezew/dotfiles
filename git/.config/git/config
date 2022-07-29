@@ -1,0 +1,15 @@
+[user]
+	email = megan@genesisblock.com
+	signingkey = F43F87E81E1646FFA272A2B56BE628F578638671
+[commit]
+	gpgsign = true
+[http]
+	cookiefile = /Users/meganjezewski/.gitcookies
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[merge]
+  conflictstyle = diff3
+[diff]
+  algorithm = histogram
+[status]
+  showUntrackedFiles = all

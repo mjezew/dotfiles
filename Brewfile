@@ -1,0 +1,8 @@
+brew "ripgrep"
+brew "fzf"
+brew "nvim"
+brew "kitty"
+brew "tmux"
+brew "starship"
+tap "homebrew/cask-fonts"
+cask "font-jetbrains-mono"

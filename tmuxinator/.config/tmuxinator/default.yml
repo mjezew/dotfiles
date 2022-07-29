@@ -1,0 +1,5 @@
+name: <%= @settings["name"] %>
+root: <%= @settings["root"] %>
+windows:
+  - "nvim": nvim
+  - "console": clear

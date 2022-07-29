@@ -1,0 +1,20 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+format = """
+[┌─────────────────────────────────](bold green)
+[│](bold green)$character$directory$character$git_branch$character$git_commit
+[└─>](bold green) """
+
+[character] # The name of the module we are configuring is "character"
+format = "🌟🧚"
+# format = "🌟 "
+# success_symbol = "🌸" 
+# error_symbol = "🧚"
+# vicmd_symbol = "🍄"
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+[git_branch]
+style = "#ff9999"
+[directory]
+style = "bright-green"

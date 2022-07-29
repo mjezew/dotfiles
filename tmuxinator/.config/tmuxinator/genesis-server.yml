@@ -1,0 +1,6 @@
+name: Genesis Server
+root: ~/desktop/gh/genesis-server
+windows:
+  - "": nvim
+  - "": clear
+  - "": docker-compose up
