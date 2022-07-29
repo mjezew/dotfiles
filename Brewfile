@@ -1,4 +1,5 @@
 brew "ripgrep"
+brew "gh"
 brew "fzf"
 brew "nvim"
 brew "kitty"
