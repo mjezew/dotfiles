@@ -13,3 +13,6 @@
   algorithm = histogram
 [status]
   showUntrackedFiles = all
+[alias]
+  to = "!git checkout $(git branches --no-multi)"
+  drop = "!git branch -d $(git branches --multi)"

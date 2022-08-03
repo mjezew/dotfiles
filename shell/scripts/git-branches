@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+fzf-tmux $1 -c "git --no-pager branch --format '%(refname:short)' --sort=-committerdate" --preview "git log --color=always --decorate {}"
