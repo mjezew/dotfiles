@@ -16,3 +16,6 @@
 [alias]
   to = "!git checkout $(git branches --no-multi)"
   drop = "!git branch -d $(git branches --multi)"
+  default-branch = !git remote show origin | rg 'HEAD branch' | cut -d ' ' -f5
+[blame]
+  date = relative
