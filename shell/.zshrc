@@ -34,6 +34,7 @@ bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
 zmodload zsh/complist
+fpath=(${ASDF_DIR}/completions $fpath)
 autoload -U compinit; compinit
 # Completion configuration
 # Define completers
@@ -147,7 +148,6 @@ alias ll='exa -l --icons --color=always --group-directories-first'
 alias lt='exa -aT --icons --color=always --group-directories-first'
 # ASDF config
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
