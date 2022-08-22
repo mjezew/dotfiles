@@ -100,6 +100,7 @@ export EDITOR=nvim
 export GOBIN=/Users/meganjezewski/go/bin
 export PATH=$PATH:$GOBIN
 
+export PATH="/usr/local/sbin:$PATH"
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # export NVM_DIR="$HOME/.nvm"
