@@ -3,10 +3,12 @@
 	signingkey = F43F87E81E1646FFA272A2B56BE628F578638671
 [commit]
 	gpgsign = true
+  template = ~/dotfiles/git/.config/git/commit_template
 [http]
 	cookiefile = /Users/meganjezewski/.gitcookies
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+  commentChar = ";"
 [merge]
   conflictstyle = diff3
 [diff]
