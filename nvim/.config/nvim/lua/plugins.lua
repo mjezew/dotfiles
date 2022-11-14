@@ -37,6 +37,7 @@ return require("packer").startup(function()
   }
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
   use {
     'janko/vim-test',
     requires = { 'tpope/vim-dispatch', 'neomake/neomake' , 'preservim/vimux'}
@@ -131,4 +132,21 @@ return require("packer").startup(function()
     end
   }
   use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
+    use {
+    'mattn/emmet-vim',
+    config = function()
+      vim.g.user_emmet_settings = {
+        elixir = {
+          extends = 'html'
+        },
+        eelixir = {
+          extends = 'html'
+        },
+        heex = {
+          extends = 'html'
+        }
+      }
+      vim.g.user_emmet_mode = 'inv'
+    end
+  }
 end)

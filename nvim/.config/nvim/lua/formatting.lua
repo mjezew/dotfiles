@@ -1,7 +1,6 @@
 local g = vim.g
 g.ale_fixers = {
-  javascript = {'prettier', 'eslint'},
-  elixir = {'mix_format'}
+  javascript = {'prettier', 'eslint'}
 }
 g.ale_linters = {
   javascript = {'eslint'},
