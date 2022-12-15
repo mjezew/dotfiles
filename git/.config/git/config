@@ -24,3 +24,5 @@
   date = relative
 [init]
 	defaultBranch = main
+[gpg]
+	program = /usr/bin/gpg
