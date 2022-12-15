@@ -13,4 +13,6 @@ stow --no-folding tmux
 ...
 ```
 
-
+### Setup language server
+Follow elixir-ls setup instructions.
+Use the path specified in `lsp.lua` so that the ls is configured correctly.
