@@ -1,6 +1,7 @@
 [user]
-	email = megan@genesisblock.com
-	signingkey = F43F87E81E1646FFA272A2B56BE628F578638671
+	email = meganjezewski@gmail.com
+	signingkey = 7B1DD36DDCAF73A2
+	name = mjezew
 [commit]
 	gpgsign = true
   template = ~/dotfiles/git/.config/git/commit_template
@@ -21,3 +22,5 @@
   default-branch = !git remote show origin | rg 'HEAD branch' | cut -d ' ' -f5
 [blame]
   date = relative
+[init]
+	defaultBranch = main

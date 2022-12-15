@@ -1,5 +1,6 @@
 brew "ripgrep"
 brew "gh"
+brew "diff-so-fancy"
 brew "fzf"
 brew "nvim"
 brew "kitty"
