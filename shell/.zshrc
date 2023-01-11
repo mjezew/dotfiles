@@ -90,7 +90,7 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using , and .
 zstyle ':fzf-tab:*' switch-group ',' '.'
-source $HOME/zsh_plugins/fzf-tab/fzf-tab.plugin.zsh
+source $HOME/zsh_plugins/fzf-tab.plugin.zsh
 
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -124,7 +124,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 export PATH=$JAVA_HOME/bin:$PATH
 
 export PATH=$HOME/scripts:$PATH
-. "$HOME/.cargo/env"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -147,11 +146,6 @@ alias ls='exa -al --icons --color=always --group-directories-first'
 alias la='exa -a --icons --color=always --group-directories-first'
 alias ll='exa -l --icons --color=always --group-directories-first'
 alias lt='exa -aT --icons --color=always --group-directories-first'
-# ASDF config
-. $HOME/.asdf/asdf.sh
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/meganjezewski/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/meganjezewski/google-cloud-sdk/path.zsh.inc'; fi
