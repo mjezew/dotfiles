@@ -1,6 +1,6 @@
 [user]
 	email = meganjezewski@gmail.com
-	signingkey = 7B1DD36DDCAF73A2
+	signingkey = 88DA4207BFD82934
 	name = mjezew
 [commit]
 	gpgsign = true
