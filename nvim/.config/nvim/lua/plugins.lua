@@ -94,8 +94,7 @@ return require("packer").startup(function()
     requires = {'nvim-lua/plenary.nvim'},
     config = function()
       require('git')
-    end,
-    commit = '06aefb1867687ee2b1d206fd5d19a2b254c62f2c'
+    end
   }
   use {
     'tpope/vim-fugitive',
