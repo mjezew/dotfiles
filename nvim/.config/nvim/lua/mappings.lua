@@ -68,9 +68,9 @@ vim.keymap.set('n', '<leader>gD', ':Gvdiffsplit origin/main', default_options)
 map('n', '<leader>go', '<CMD>Git difftool --name-only<CR>', default_options)
 map('n', '<leader>gO', '<CMD>Git difftool<CR>', default_options)
 
-map('n', '<leader>l[', '<cmd>lua vim.lsp.diagnostic.goto_prev({ wrap = true })<CR>', default_options)
-map('n', '<leader>l]', '<cmd>lua vim.lsp.diagnostic.goto_next({ wrap = true })<CR>', default_options)
-map('n', '<leader>l=', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({})<CR>', default_options)
+map('n', '<leader>l[', '<cmd>lua vim.diagnostic.goto_prev({ wrap = true })<CR>', default_options)
+map('n', '<leader>l]', '<cmd>lua vim.diagnostic.goto_next({ wrap = true })<CR>', default_options)
+map('n', '<leader>l=', '<cmd>lua vim.diagnostic.show_line_diagnostics({})<CR>', default_options)
 
 -- copy and paste
 map('v', '<leader>cc', '"+y', default_options)
