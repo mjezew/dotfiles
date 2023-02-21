@@ -148,4 +148,37 @@ return require("packer").startup(function()
       vim.g.user_emmet_mode = 'inv'
     end
   }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    requires = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/playground'
+    },
+    config = function() 
+        require 'nvim-treesitter.configs'.setup(
+        {
+          ensure_installed = "all",
+            highlight = {
+              enable = false
+            },
+            textobjects = {
+            select = {
+              enable = true,
+              keymaps = {
+                -- You can use the capture groups defined in textobjects.scm
+                ["ic"] = "@comment.inner",
+                ["ac"] = "@comment.outer",
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["am"] = "@class.outer",
+                ["im"] = "@class.inner",
+                ["ib"] = "@block.inner",
+                ["ab"] = "@block.outer"
+              }
+            }
+        } 
+        }
+        )
+    end
+  }
 end)
