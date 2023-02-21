@@ -27,3 +27,7 @@ https://github.com/wbthomason/packer.nvim
 
 ### Install fzf tab
 https://github.com/Aloxaf/fzf-tab 
+
+### Install tpm (note non-default directory)
+`git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm/`
+https://github.com/tmux-plugins/tpm
