@@ -14,11 +14,11 @@ gitsigns.setup {
       opts.buffer = bufnr
       vim.keymap.set(mode, l, r, opts)
     end
-    --[[ map({'n'}, '<leader>g>', '<cmd>lua require\"gitsigns\".next_hunk()<CR>zz')
+    map({'n'}, '<leader>g>', '<cmd>lua require\"gitsigns\".next_hunk()<CR>zz')
     map({'n'}, '<leader>g<', '<cmd>lua require\"gitsigns\".prev_hunk()<CR>zz')
     map({'n'}, '<leader>g+', '<cmd>lua require"gitsigns".stage_hunk()<CR>')
     map({'n'}, '<leader>g-', '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>')
     map({'n'}, '<leader>g=', '<cmd>lua require"gitsigns".reset_hunk()<CR>')
-    map({'n'}, '<leader>gp', '<cmd>lua require"gitsigns".preview_hunk()<CR>') ]]
+    map({'n'}, '<leader>gp', '<cmd>lua require"gitsigns".preview_hunk()<CR>')
   end
 }
