@@ -1,5 +1,5 @@
 [user]
-	email = meganjezewski@gmail.com
+	email = megan.jezewski@pdq.com
 	signingkey = 88DA4207BFD82934
 	name = mjezew
 [commit]
@@ -20,6 +20,10 @@
   to = "!git checkout $(git branches --no-multi)"
   drop = "!git branch -d $(git branches --multi)"
   default-branch = !git remote show origin | rg 'HEAD branch' | cut -d ' ' -f5
+	cb = checkout -b
+	co = checkout
+	cm = commit
+	db = branch -D
 [blame]
   date = relative
 [init]

@@ -9,6 +9,19 @@
 
 ; Footer: Project metadata (area, ticket hash, related)
 
+; conventional commit reference
+; Bug fix (`fix`)
+; Feature (`feat`)
+; Breaking change (`BREAKING CHANGE`)
+; Documentation (`docs`)
+; Code style (`style`)
+; Refactor (`refactor`)
+; Performance enhancement (`perf`)
+; Tests (`test`)
+; Continuous integration (`ci`)
+; Build or dependency (`build`)
+; Tool and configuration changes (`chore`)
+
 ; Great example commit
 ; Capitalized, short (50 chars or less) summary
 ; 
