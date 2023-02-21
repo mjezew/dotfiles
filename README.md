@@ -2,7 +2,7 @@
 
 ## Starting up on a new machine
 
-### Install kitty + homebrew 
+### Install kitty + asdf (via git) + homebrew 
 
 ### Install plugins, fonts, etc.
 use `brew bundle` if using brew to install necessary plugins specified in `Brewfile`. If not using `brew`, download the plugins specified there.
