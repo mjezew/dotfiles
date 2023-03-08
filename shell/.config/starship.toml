@@ -6,7 +6,7 @@ format = """
 [└─>](bold green) """
 
 [character] # The name of the module we are configuring is "character"
-format = "🌟🧚"
+format = "🌟🧚🍄"
 # format = "🌟 "
 # success_symbol = "🌸" 
 # error_symbol = "🧚"

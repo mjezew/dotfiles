@@ -64,7 +64,7 @@ end
 -----------------------------------------------------------
 gls.left[1] = {
   KittyCat = {
-    provider = function() return ' ' end,
+    provider = function() return '🍄' end,
     separator = ' '
   }
 }
