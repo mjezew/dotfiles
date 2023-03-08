@@ -7,7 +7,7 @@ return require("packer").startup(function()
   use "nvim-lua/plenary.nvim"
   use {
     "nvim-telescope/telescope.nvim",
-    requires = {{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}},
+    requires = {{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}, {'nvim-telescope/telescope-symbols.nvim'}},
     config = function() 
             local telescope = require('telescope')
             telescope.setup({
@@ -101,10 +101,16 @@ return require("packer").startup(function()
     requires = {'tpope/vim-rhubarb'}
   }
   use 'tpope/vim-endwise'
-  use { 
+  use {
+    'ggandor/leap.nvim',
+    config = function() 
+     require('leap').add_default_mappings()
+    end
+  }
+  --[[ use { 
    'justinmk/vim-sneak',
    config = function() vim.g["sneak#label"] = true end
-  }
+  } ]]
   use {
     'vimwiki/vimwiki',
     branch = 'dev',
