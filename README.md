@@ -31,3 +31,6 @@ https://github.com/Aloxaf/fzf-tab
 ### Install tpm (note non-default directory)
 `git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm/`
 https://github.com/tmux-plugins/tpm
+
+### Install typescript ls
+`npm install -g typescript typescript-language-server`
