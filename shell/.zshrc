@@ -30,6 +30,8 @@ export NNN_FCOLORS="$BLK$CHAR$DIR$EXE$REG$HLI$SLI$MIS$ORP$FIF$SOC$UNK"
 
 export FZF_DEFAULT_OPTS="--reverse --ansi --color=fg:15,hl:3,hl+:3,bg+:-1,fg+:-1,pointer:06,spinner:05,info:7,prompt:6"
 
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
@@ -140,6 +142,10 @@ fpath=($HOME/zsh_plugins $fpath)
 autoload -Uz compinit && compinit
 eval "$(starship init zsh)"
 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 CDPATH=".:$HOME/Desktop/gh:$HOME/.config"
 
 alias ls='exa -al --icons --color=always --group-directories-first'
@@ -147,8 +153,11 @@ alias la='exa -a --icons --color=always --group-directories-first'
 alias ll='exa -l --icons --color=always --group-directories-first'
 alias lt='exa -aT --icons --color=always --group-directories-first'
 
+# ASDF config
+. $HOME/.asdf/asdf.sh
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/meganjezewski/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/meganjezewski/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/mjezewski/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mjezewski/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/meganjezewski/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/meganjezewski/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/mjezewski/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mjezewski/google-cloud-sdk/completion.zsh.inc'; fi
