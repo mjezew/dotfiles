@@ -1,0 +1,6 @@
+name: Portal
+root: ~/gh/portal
+windows:
+  - "": nvim
+  - "": clear
+  - "": nvim +DBUI
