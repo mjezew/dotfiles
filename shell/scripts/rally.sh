@@ -4,4 +4,4 @@ RALLY=rally
 VERSION=0.0.1
 TARGET=$(ls -d  ~/gh/* ~/* | fzf)
 NAME=$(basename $TARGET)
-tmuxinator start $NAME || tmuxinator start default name=$NAME root=$TARGET
+smug start $NAME -a 2>/dev/null || smug start default name=$NAME root=$TARGET -a

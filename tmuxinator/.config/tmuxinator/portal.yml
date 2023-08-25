@@ -2,5 +2,9 @@ name: Portal
 root: ~/gh/portal
 windows:
   - "": nvim
-  - "": clear
+  - "": 
+      layout: main-vertical
+      panes: 
+        - iex -S mix phx.server
+        - nvim bachelor_pad
   - "": nvim +DBUI

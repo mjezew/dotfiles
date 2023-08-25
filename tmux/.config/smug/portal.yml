@@ -1,0 +1,24 @@
+session: PORTAL
+root: ~/gh/portal
+
+before_start: 
+  - docker-compose up -d
+
+stop:
+  - docker-compose stop
+
+windows:
+  - name: ""
+    commands:
+      - nvim
+  - name: ""
+    commands: 
+      - iex -S mix phx.server
+    layout: 122f,170x47,0,0{104x47,0,0,2,65x47,105,0,3}
+    panes:
+      - type: vertical
+        commands:
+          - nvim bachelor_pad
+  - name: ""
+    commands:
+      - nvim +DBUI
