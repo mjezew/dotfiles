@@ -1,4 +1,4 @@
-session: PORTAL
+session: portal
 root: ~/gh/portal
 
 before_start: 
