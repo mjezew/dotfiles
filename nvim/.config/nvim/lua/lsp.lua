@@ -1,25 +1,36 @@
 local nvim_lsp = require "lspconfig"
+local configs = require "lspconfig.configs"
 local protocol = require 'vim.lsp.protocol'
 local capabilities = protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+local formatting_augrop = vim.api.nvim_create_augroup("LSPFORMATTING", {})
 local on_attach = function(client, buffer_number)
-  vim.api.nvim_create_autocmd('BufWritePre', { buffer = buffer_number, callback = vim.lsp.buf.formatting_seq_sync })
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = formatting_augrop, buffer = buffer_number })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = formatting_augrop,
+      buffer = buffer_number,
+      callback = function() vim.lsp.buf.format() end
+    })
+  end
 end
 
-nvim_lsp.elixirls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  cmd = {
-    vim.loop.os_homedir() .. "/gh/elixir-ls/release/language_server.sh"
-  },
-  settings = {
-    elixirLS = {
-      dialyzerEnabled = false,
-      suggestSpecs = true,
-    }
+if not configs.lexical then
+  configs.lexical = {
+    default_config = {
+      filetypes = { "elixir", "eelixir", "heex" },
+      cmd = { vim.loop.os_homedir() .. "/gh/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+      root_dir = function(fname)
+        return nvim_lsp.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+      end,
+      -- optional settings
+      settings = {},
+    },
   }
-})
+end
+
+nvim_lsp.lexical.setup({ on_attach = on_attach })
 
 nvim_lsp.lua_ls.setup({
   on_attach = on_attach,
