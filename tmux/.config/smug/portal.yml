@@ -2,6 +2,7 @@ session: portal
 root: ~/gh/portal
 
 before_start: 
+  - source .env
   - docker-compose up -d
 
 stop:
