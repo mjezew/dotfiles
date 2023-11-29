@@ -12,7 +12,22 @@ return require("packer").startup(function(use)
     config = function()
       local telescope = require('telescope')
       telescope.setup({
+        defaults = {
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+            "-g",
+            "!.git"
+          }
+        },
         pickers = {
+          find_files = { hidden = true },
           live_grep = { hidden = true }
         },
         extensions = {
