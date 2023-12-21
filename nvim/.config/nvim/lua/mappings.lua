@@ -29,14 +29,28 @@ map("n", "<leader>,", ":nohlsearch<cr>", default_options)
 map("n", "n", "nzz", default_options)
 map("n", "N", "Nzz", default_options)
 
+local send_to_tmux = function()
+  -- yank text into v register
+  if vim.api.nvim_get_mode()["mode"] == "n" then
+    vim.cmd('normal vip"vy')
+  else
+    vim.cmd('normal "vy')
+  end
+  -- construct command with v register as command to send
+  -- vim.cmd(string.format('call VimuxRunCommand("%s")', vim.trim(vim.fn.getreg('v'))))
+  vim.cmd("call VimuxRunCommand(@v)")
+end
+
+vim.keymap.set({ 'n', 'v' }, '<C-c><C-c>', send_to_tmux)
+vim.keymap.set('n', '<leader>tq', '<CMD>VimuxCloseRunner<CR>')
 map('n', '<leader>tt', ':TestFile<CR>', default_options)
-map('n', '<leader>tT', ':TestFile -strategy=vimux<CR>', default_options)
+map('n', '<leader>tT', ':TestFile -strategy=vimux_watch<CR>', default_options)
 map('n', '<leader>tn', ':TestNearest<CR>', default_options)
-map('n', '<leader>tN', ':TestNearest -strategy=vimux<CR>', default_options)
+map('n', '<leader>tN', ':TestNearest -strategy=vimux_watch<CR>', default_options)
 map('n', '<leader>t.', ':TestLast<CR>', default_options)
 map('n', '<leader>tv', ':TestVisit<CR>zz', default_options)
 map('n', '<leader>ts', ':TestSuite<CR>', default_options)
-map('n', '<leader>tS', ':TestSuite -strategy=vimux<CR>', default_options)
+map('n', '<leader>tS', ':TestSuite -strategy=vimux_watch<CR>', default_options)
 map('n', '<leader>tc', ':VimuxCloseRunner<CR>', default_options)
 
 map('n', '<leader>ff', ':NvimTreeFindFile<CR>', default_options)

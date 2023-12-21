@@ -10,6 +10,7 @@ g['test#strategy'] = {
 }
 g.VimuxOrientation = "h"
 g.VimuxHeight = "30"
+g.VimuxCloseOnExit = true
 g['test#neovim#term_position'] = 'vert'
 g.neomake_warning_sign = {
   text = '∙'
@@ -17,13 +18,20 @@ g.neomake_warning_sign = {
 g.neomake_error_sign = {
   text = '∙'
 }
-g.dispatch_compilers = {elixir = 'exunit'}
+g.dispatch_compilers = { elixir = 'exunit' }
+g["test#custom_strategies"] = {
+  vimux_watch = function(args)
+    vim.cmd("call VimuxClearTerminalScreen()")
+    vim.cmd("call VimuxClearRunnerHistory()")
+    vim.cmd(string.format("call VimuxRunCommand('fd . | entr -c %s')", args))
+  end
+}
 local M = {}
 M.TESTING_STATUS = 'init'
-M.neomake_on_job_started = function ()
+M.neomake_on_job_started = function()
   M.TESTING_STATUS = 'running'
 end
-M.neomake_on_job_ended = function ()
+M.neomake_on_job_ended = function()
   local context = g.neomake_hook_context
   if context.jobinfo.exit_code == 0 then
     M.TESTING_STATUS = 'passing'
