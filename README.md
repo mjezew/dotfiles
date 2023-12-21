@@ -34,3 +34,7 @@ https://github.com/tmux-plugins/tpm
 
 ### Install typescript ls
 `npm install -g typescript typescript-language-server`
+
+
+## Lexical maintenance
+`git pull && mix package`
