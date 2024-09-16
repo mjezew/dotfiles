@@ -215,22 +215,11 @@ return require("packer").startup(function(use)
   }
   use {
     "williamboman/mason.nvim",
-    config = function()
-      require('mason').setup()
-    end
-  }
-  use {
     "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "ts_ls", "lexical", "lua_ls" },
-        automatic_installation = true
-      })
-    end
-  }
-  use {
     "neovim/nvim-lspconfig",
     config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup()
       require("lsp")
     end
   }
