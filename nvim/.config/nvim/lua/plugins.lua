@@ -6,7 +6,7 @@ return require("packer").startup(function(use)
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
   use {
-    "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope.nvim", tag = '0.1.8',
     requires = { { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       { 'nvim-telescope/telescope-symbols.nvim' } },
     config = function()
@@ -42,9 +42,6 @@ return require("packer").startup(function(use)
     end
   }
   use "elixir-editors/vim-elixir"
-  use { "neovim/nvim-lspconfig", config = function()
-    require("lsp")
-  end }
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',
@@ -214,6 +211,27 @@ return require("packer").startup(function(use)
       vim.g.db_ui_execute_on_save = false
       vim.g.db_ui_save_location = "./mjezew_queries"
       vim.g.db_ui_disable_mappings = true
+    end
+  }
+  use {
+    "williamboman/mason.nvim",
+    config = function()
+      require('mason').setup()
+    end
+  }
+  use {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "ts_ls", "lexical", "lua_ls" },
+        automatic_installation = true
+      })
+    end
+  }
+  use {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("lsp")
     end
   }
 end)

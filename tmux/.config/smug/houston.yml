@@ -1,8 +1,12 @@
-session: portal
-root: ~/gh/portal
+session: houston
+root: ~/gh/houston
 
 before_start: 
   - source .env
+  - docker-compose up -d
+
+stop:
+  - docker-compose stop
 
 windows:
   - name: ""
@@ -16,6 +20,9 @@ windows:
       - type: vertical
         commands:
           - nvim bachelor_pad
+  - name: ""
+    commands:
+      - cd assets && npm run dev
   - name: ""
     commands:
       - nvim +DBUI

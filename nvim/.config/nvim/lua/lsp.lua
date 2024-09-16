@@ -19,7 +19,7 @@ end
 if not configs.lexical then
   configs.lexical = {
     default_config = {
-      filetypes = { "elixir", "eelixir", "heex" },
+      filetypes = { "elixir", "eelixir", "heex", "js" },
       cmd = { vim.loop.os_homedir() .. "/gh/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
       root_dir = function(fname)
         return nvim_lsp.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
