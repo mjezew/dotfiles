@@ -88,8 +88,8 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 zstyle ':completion::git-checkout:' sort false
 # set descriptions format to enable group support
 zstyle ':completion:*:descriptions' format '[%d]'
-# preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using , and .
 zstyle ':fzf-tab:*' switch-group ',' '.'
 source $HOME/zsh_plugins/fzf-tab.plugin.zsh
@@ -148,10 +148,10 @@ bindkey -M vicmd v edit-command-line
 
 CDPATH=".:$HOME/Desktop/gh:$HOME/.config"
 
-alias ls='exa -al --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'
-alias ll='exa -l --icons --color=always --group-directories-first'
-alias lt='exa -aT --icons --color=always --group-directories-first'
+alias ls='eza -al --icons --color=always --group-directories-first'
+alias la='eza -a --icons --color=always --group-directories-first'
+alias ll='eza -l --icons --color=always --group-directories-first'
+alias lt='eza -aT --icons --color=always --group-directories-first'
 
 # ASDF config
 . $HOME/.asdf/asdf.sh
