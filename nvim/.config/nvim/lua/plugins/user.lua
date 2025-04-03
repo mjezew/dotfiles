@@ -1,17 +1,9 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
+-- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
 
   "tpope/vim-fugitive",
   {
@@ -20,51 +12,32 @@ return {
   },
 
   {
-    "vim-test/vim-test",
-    requires = { "tpope/vim-dispatch", "neomake/neomake", "preservim/vimux" },
-  },
-
-  -- == Examples of Overriding Plugins ==
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        ";,,,             `       '             ,,,;",
-        "`YES8888bo.       :     :       .od8888YES'",
-        "   888IO8DO88b.     :   :     .d8888I8DO88",
-        "   8LOVEY'  `Y8b.   `   '   .d8Y'  `YLOVE8",
-        " jTHEE!  .db.  Yb. '   ' .dY  .db.  8THEE!",
-        "   `888  Y88Y    `b ( ) d'    Y88Y  888'",
-        "    8MYb  '\"        ,',        \"'  dMY8",
-        "   j8prECIOUSgf\"'   ':'   `\"?g8prECIOUSk",
-        "     'Y'   .8'     d' 'b     '8.   'Y'",
-        "      !   .8' db  d'; ;`b  db '8.   !",
-        "         d88  `'  8 ; ; 8  `'  88b",
-        "        d88Ib   .g8 ',' 8g.   dI88b",
-        "       :888LOVE88Y'     'Y88LOVE888:",
-        "       '! THEE888'       `888THEE !'",
-        "          '8Y  `Y         Y'  Y8'",
-        "           Y                   Y",
-        "           !                   !",
-      }
-      return opts
-    end,
-  },
-
-  -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
-
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  {
-    "L3MON4D3/LuaSnip",
-    config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
-      luasnip.filetype_extend("javascript", { "javascriptreact" })
-    end,
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        preset = {
+          header = table.concat({
+            ";,,,             `       '             ,,,;",
+            "`YES8888bo.       :     :       .od8888YES'",
+            "888IO8DO88b.     :   :     .d8888I8DO88",
+            "8LOVEY'  `Y8b.   `   '   .d8Y'  `YLOVE8",
+            "jTHEE!  .db.  Yb. '   ' .dY  .db.  8THEE!",
+            "`888  Y88Y    `b ( ) d'    Y88Y  888'",
+            "8MYb  '\"        ,',        \"'  dMY8",
+            "j8prECIOUSgf\"'   ':'   `\"?g8prECIOUSk",
+            "'Y'   .8'     d' 'b     '8.   'Y'",
+            "!   .8' db  d'; ;`b  db '8.   !",
+            "d88  `'  8 ; ; 8  `'  88b",
+            "d88Ib   .g8 ',' 8g.   dI88b",
+            ":888LOVE88Y'     'Y88LOVE888:",
+            "'! THEE888'       `888THEE !'",
+            "'8Y  `Y         Y'  Y8'",
+            "Y                   Y",
+            "!                   !",
+          }, "\n"),
+        },
+      },
+    },
   },
 
   {
