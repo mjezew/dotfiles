@@ -1,19 +1,15 @@
 session: houston
 root: ~/gh/houston
 
-before_start: 
+before_start:
   - source .env
-  - docker-compose up -d
-
-stop:
-  - docker-compose stop
 
 windows:
   - name: ""
     commands:
       - nvim
   - name: ""
-    commands: 
+    commands:
       - iex -S mix phx.server
     layout: 122f,170x47,0,0{104x47,0,0,2,65x47,105,0,3}
     panes:

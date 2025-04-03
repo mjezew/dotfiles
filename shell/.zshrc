@@ -153,12 +153,9 @@ alias la='eza -a --icons --color=always --group-directories-first'
 alias ll='eza -l --icons --color=always --group-directories-first'
 alias lt='eza -aT --icons --color=always --group-directories-first'
 
-# ASDF config
-. $HOME/.asdf/asdf.sh
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mjezewski/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mjezewski/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mjezewski/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mjezewski/google-cloud-sdk/completion.zsh.inc'; fi
-eval "$(/Users/mjezewski/.local/bin/mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
