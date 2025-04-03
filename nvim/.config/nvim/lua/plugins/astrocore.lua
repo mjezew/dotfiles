@@ -73,6 +73,27 @@ return {
           desc = "Close buffer from tabline",
         },
 
+        gl = {
+          function() vim.diagnostic.open_float() end,
+          desc = "Hover diagnostics",
+        },
+        -- These LSP mappings not in `astrolsp.lua` because elixirLS doesn't provide the client capability quickly enough
+        grr = {
+          function() require("snacks.picker").lsp_references() end,
+          desc = "LSP References",
+        },
+        gI = {
+          function() require("snacks.picker").lsp_implementations() end,
+          desc = "LSP Implementations",
+        },
+        gd = {
+          function() require("snacks.picker").lsp_definitions() end,
+          desc = "LSP Definitions",
+        },
+        gy = {
+          function() require("snacks.picker").lsp_type_definitions() end,
+          desc = "LSP Type Definitions",
+        },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
