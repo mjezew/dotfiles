@@ -8,12 +8,9 @@ return {
         n = {
           -- second key is the lefthand side of the map
           -- mappings seen under group name "Buffer"
-          ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
           [";"] = { ":", noremap = true },
           [":"] = { ";", noremap = true },
           ["<leader>/"] = { ":silent grep -i ", noremap = true },
-          ["<leader>lh"] = { ":lua vim.lsp.buf.hover()<cr>", noremap = true },
-          ["<leader>ld"] = { ":lua vim.lsp.buf.definition()<cr>", noremap = true },
           ["<Leader>b"] = { ":b#<cr>", noremap = true },
           ["<localleader>gs"] = { ":G<cr>", noremap = true },
           ["<Leader>gb"] = { ":Git blame<cr>", noremap = true },
