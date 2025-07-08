@@ -11,5 +11,6 @@ return {
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
   { import = "astrocommunity.test.vim-test" },
+  { import = "astrocommunity.pack.biome" },
   -- import/override with your plugins folder
 }
