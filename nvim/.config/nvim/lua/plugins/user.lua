@@ -33,7 +33,8 @@ return {
             '! THEE888'       `888THEE !',
             '8Y  `Y         Y'  Y8',
             Y                   Y,
-            !                   !,]],
+            !                   !, 
+          ]],
         },
       },
     },
@@ -119,6 +120,25 @@ return {
       vim.g["VimuxOrientation"] = "h"
       vim.g["VimuxHeight"] = "35%"
       vim.g["VimuxCloseOnExit"] = true
+    end,
+  },
+
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    dependencies = {
+      { "tpope/vim-dadbod", lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true }, -- Optional
+    },
+    cmd = {
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIFindBuffer",
+    },
+    init = function()
+      -- Your DBUI configuration
+      vim.g.db_ui_save_location = "./mjezew_queries"
+      vim.g.db_ui_use_nerd_fonts = 1
     end,
   },
 }
