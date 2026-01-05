@@ -1,6 +1,6 @@
 [user]
 	email = megan.jezewski@pdq.com
-	signingkey = 88DA4207BFD82934
+	signingkey = /Users/Megan.Jezewski/.ssh/id_ed25519
 	name = mjezew
 [commit]
 	gpgsign = true
@@ -29,3 +29,5 @@
   date = relative
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh

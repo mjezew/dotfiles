@@ -166,3 +166,5 @@ eval "$(~/.local/bin/mise activate zsh)"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 export PATH="/Users/mjezewski/.bun/bin:$PATH"
+
+ulimit -n 524288

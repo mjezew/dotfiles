@@ -1,5 +1,5 @@
 session: portal
-root: ~/gh/portal
+root: ~/portal.pdq.com
 
 before_start: 
   - source .env
