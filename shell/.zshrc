@@ -159,3 +159,10 @@ if [ -f '/Users/mjezewski/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mjeze
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mjezewski/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mjezewski/google-cloud-sdk/completion.zsh.inc'; fi
 eval "$(~/.local/bin/mise activate zsh)"
+
+# Source local customizations
+[[ -f "/Users/mjezewski/.zshrc.local" ]] && source "/Users/mjezewski/.zshrc.local"
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+export PATH="/Users/mjezewski/.bun/bin:$PATH"

@@ -47,6 +47,9 @@ return {
       html = {
         filetypes = { "html", "heex" },
       },
+      -- elixirls = {
+      --   cmd = { vim.uv.os_homedir() .. "/gh/elixir-ls/release/language_server.sh" },
+      -- },
     },
     -- customize how language servers are attached
     handlers = {

@@ -8,7 +8,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.elixir-phoenix" },
+  -- { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
   { import = "astrocommunity.test.vim-test" },
   { import = "astrocommunity.pack.biome" },
