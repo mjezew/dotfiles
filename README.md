@@ -14,6 +14,7 @@ stow shell
 stow --no-folding nvim
 stow --no-folding git
 stow --no-folding tmux
+stow --no-folding smug
 ...
 ```
 
