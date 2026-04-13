@@ -4,3 +4,6 @@ font-size = 15.0
 macos-titlebar-proxy-icon = hidden
 window-height = 50
 window-width = 135
+
+keybind=alt+left=text:\x1b\x62
+keybind=alt+right=text:\x1b\x66
