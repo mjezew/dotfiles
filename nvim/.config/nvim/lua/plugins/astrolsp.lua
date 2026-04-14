@@ -7,7 +7,24 @@
 return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
-  opts = {
+  opts = function(_, opts)
+    -- Register dexter with lspconfig since it's not a built-in server
+    local lspconfig = require("lspconfig")
+    local configs = require("lspconfig.configs")
+    if not configs.dexter then
+      configs.dexter = {
+        default_config = {
+          cmd = { "dexter", "lsp" },
+          filetypes = { "elixir", "eelixir", "heex" },
+          root_dir = function(fname)
+            return lspconfig.util.root_pattern(".dexter.db", "mix.exs", ".git")(fname)
+          end,
+          single_file_support = true,
+        },
+      }
+    end
+
+    return {
     -- Configuration table of features provided by AstroLSP
     features = {
       codelens = true, -- enable/disable codelens refresh on start
@@ -38,6 +55,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "dexter",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -45,8 +63,12 @@ return {
       html = {
         filetypes = { "html", "heex" },
       },
-      elixirls = {
-        cmd = { vim.uv.os_homedir() .. "/elixir-ls/rel/language_server.sh" },
+      dexter = {
+        init_options = {
+          followDelegates = true, -- jump through defdelegate to the target function
+          -- stdlibPath = "",      -- override Elixir stdlib path (auto-detected)
+          -- debug = false,        -- verbose logging to stderr (view with :LspLog)
+        },
       },
     },
     -- customize how language servers are attached
@@ -104,5 +126,6 @@ return {
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
     end,
-  },
+  }
+  end,
 }

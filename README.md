@@ -18,11 +18,6 @@ stow --no-folding smug
 ...
 ```
 
-### Setup language server
-Follow elixir-ls setup instructions.
-Use the path specified in `lsp.lua` so that the ls is configured correctly.
-This is a guide I've liked in the past: https://www.mitchellhanberg.com/how-to-set-up-neovim-for-elixir-development/
-
 ### Install fzf tab
 https://github.com/Aloxaf/fzf-tab 
 
