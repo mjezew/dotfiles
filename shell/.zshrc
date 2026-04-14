@@ -168,3 +168,4 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export PATH="/Users/mjezewski/.bun/bin:$PATH"
 
 ulimit -n 524288
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
