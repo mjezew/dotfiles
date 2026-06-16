@@ -10,7 +10,7 @@ windows:
       - nvim
   - name: ""
     commands:
-      - iex -S mix phx.server
+      - task setup
     layout: 122f,170x47,0,0{104x47,0,0,2,65x47,105,0,3}
     panes:
       - type: vertical
