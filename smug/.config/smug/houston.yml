@@ -18,7 +18,7 @@ windows:
           - nvim bachelor_pad
   - name: ""
     commands:
-      - cd assets && pnpm dev
+      - cd assets && aube dev
   - name: ""
     commands:
       - nvim +DBUI
